@@ -12,8 +12,8 @@ $actualLogin = $_POST["login"];
 $actualPassword = $_POST["password"];
 
 $lines = file('pass.txt');
-$expectedLogin = $lines[0];
-$expectedPassword = $lines[1];
+$expectedLogin = trim($lines[0]);
+$expectedPassword = trim($lines[1]);
 
 echo "{$actualLogin} actualLogin <br>";
 echo "{$expectedLogin} expectedLogin <br>";
@@ -24,8 +24,10 @@ if ((strcmp($actualLogin, $expectedLogin) == 0) and (strcmp($actualPassword, $ex
     echo "верно";
     //нужно открыть страницу с инфой
 } else {
-    echo "неверно";
-    //нужно средиректить на index и сказать что "логин/пароль неверные, попробуйте ещё раз"
+    echo '<script type="text/javascript">',
+        'window.location.replace("http://localhost/");',
+        'window.alert("логин/пароль неверные, попробуйте ещё раз");',
+        '</script>';
 }
 ?>
 
