@@ -16,8 +16,9 @@ $expectedLogin = trim($lines[0]);
 $expectedPassword = trim($lines[1]);
 
 if ((strcmp($actualLogin, $expectedLogin) == 0) and (strcmp($actualPassword, $expectedPassword) == 0)) {
-    echo "верно";
-    //нужно открыть страницу с инфой
+    echo '<script type="text/javascript">',
+        'window.location.replace("http://localhost/main.php");',
+        '</script>';
 } else {
     echo '<script type="text/javascript">',
         'window.location.replace("http://localhost/");',
