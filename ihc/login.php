@@ -15,11 +15,6 @@ $lines = file('pass.txt');
 $expectedLogin = trim($lines[0]);
 $expectedPassword = trim($lines[1]);
 
-echo "{$actualLogin} actualLogin <br>";
-echo "{$expectedLogin} expectedLogin <br>";
-echo "{$actualPassword} actualPassword <br>";
-echo "{$expectedPassword} expectedPassword <br>";
-
 if ((strcmp($actualLogin, $expectedLogin) == 0) and (strcmp($actualPassword, $expectedPassword) == 0)) {
     echo "верно";
     //нужно открыть страницу с инфой
