@@ -9,7 +9,7 @@
 
 <form method="post" action="login.php">
     <label>login<input type="text" name="login"></label>
-    <label>password<input type="text" name="password"></label>
+    <label>password<input type="password" name="password"></label>
     <input type="submit" name="send" value="--->">
 </form>
 
